@@ -11,6 +11,31 @@
   </head>
 
   <body>
+    <header>
+      <!--Bookers(root_to)リンク-->
+      <!--Home(users/:id)リンク-->
+      
+    <% if user_signed_in? %>
+     <!--true→Users(users)・Books(books)・Logout(sign_out)-->
+      <li>
+        <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+      </li>
+      <li>
+      </li>
+      <li>
+      </li>
+      <!--↑Users,Booksリンク-->
+      
+    <% else %>
+    <!--false→About(home/about)・Sign up(users/sign_up)・Login(users/sign_in) -->
+      <li>
+        <%= link_to "Sign up", new_user_registration_path %>
+      </li>
+      <li>
+        <%= link_to "Log in", new_user_session_path %>
+      </li>
+    <% end %>
+  </header>
     <%= yield %>
   </body>
 </html>
