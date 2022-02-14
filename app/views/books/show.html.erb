@@ -12,5 +12,10 @@
     
   <%= link_to @book.title, book_path(@book.id) %>
   <%= @book.body %>
-
+  
+  <!--ログイン中のuserであればここにeditとdestroyのリンクを表示-->
+  <% if @book.user == current_user %>
+    <%= link_to "Edit", edit_book_path(@book.id) %>
+    <%= link_to "Destroy", book_path(@book), method: :delete %>
+  <% end %>
 </div>
