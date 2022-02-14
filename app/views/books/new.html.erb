@@ -1,2 +1,9 @@
-<h1>Books#new</h1>
-<p>Find me in app/views/books/new.html.erb</p>
+<h1>New book</h1>
+  <%= form_with model: @book, local:true do |f| %>
+    <p>Title</p>
+      <%= f.text_field :title %><!--, class:"form-control", placeholder:"ショップ名" %-->
+    <p>Opinion</p>
+      <%= f.text_area :body %><!--, class:"form-control", rows:"3", placeholder:"コメントここに" %>-->
+      
+    <%= f.submit "Create Book" %>
+  <% end %>

@@ -3,8 +3,7 @@ class CreateBooks < ActiveRecord::Migration[6.1]
     create_table :books do |t|
       t.string :title
       t.text :body
-      #↓投稿したユーザを識別するID
-      t.integer :user_id
+      t.integer :user_id#投稿したユーザを識別するID
       t.timestamps
     end
   end
