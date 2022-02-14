@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'books/new'
+  get 'books/index'
+  get 'books/show'
+  get 'books/edit'
   devise_for :users
   
   resources :users#, only: [:show, :index, :edit, :]
