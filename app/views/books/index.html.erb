@@ -7,12 +7,12 @@
     <% else %>
       <% image_tag "no_image.jpg", size: "200×200" %>
     <% end %>
+<% end %>
 
-    <% @books.each do |book| %>
+<% @books.each do |book| %>
   <p>Title</p>
     <%= link_to book.title, book_path(book.id) %>
   <p>Opinion</p>
     <%= book.body %>
 </div>
-<% end %>
 <% end %>
