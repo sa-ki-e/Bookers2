@@ -12,22 +12,31 @@
 
   <body>
     <header>
-      <!--Bookers(aタグを使用)リンク-->
+      <a class="navbar-brand" href="/"><span>Bookers</span></a><!--Bookers(aタグを使用)リンク-->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="true" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="fas fa-home nav-link text-light" href="/"> Home</a>
       <!--Home(users/:id)リンク-->
-      
+
     <% if user_signed_in? %>
      <!--true→Users(users)・Books(books)・Logout(sign_out)-->
       <li>
+        <a class="fas fa-users nav-link text-light" href="/users"> Users</a>
+      </li>
+      <li>
+        <a class="fas fa-book-open nav-link text-light" href="/books"> Books</a>
+      </li>
+      <li>
         <%= link_to "Log out", destroy_user_session_path, method: :delete %>
       </li>
-      <li>
-      </li>
-      <li>
-      </li>
       <!--↑Users,Booksリンク-->
-      
+
     <% else %>
     <!--false→About(home/about)・Sign up(users/sign_up)・Login(users/sign_in) -->
+      <li>
+        <a class="fas fa-link nav-link text-light" href="/home/about"> About</a>
+      </li>
       <li>
         <%= link_to "Sign up", new_user_registration_path %>
       </li>
@@ -35,7 +44,15 @@
         <%= link_to "Log in", new_user_session_path %>
       </li>
     <% end %>
-  </header>
     <%= yield %>
+  </header>
+
+
+
+
+
+  <footer>
+    <p>CopyRight Infratop.inc</p>
+  </footer>
   </body>
 </html>
