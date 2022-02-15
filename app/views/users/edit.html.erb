@@ -1,14 +1,14 @@
-<h1>Users#edit</h1>
+<h1>User info</h1>
 
 
 <!--イメージと自己紹介を追加、下はサンプル-->
-<h1>Editing Book</h1>
-<%= form_with model:@book, local:true do |f| %>
-<p>Title</p>
-  <%= f.text_field :title %><!--, class:"form-control", placeholder:"ショップ名" %-->
-<p>Opinion</p>
-  <%= f.text_area :body %><br><!--, class:"form-control", rows:"3", placeholder:"コメントここに" %>-->
-  <%= f.submit "Update " %>
+<%= form_with model:@user, local:true do |f| %>
+<p>Name</p>
+  <%= f.text_field :name %>
+<p>Image</p>
+  <%= f.file_field :image, accept: "image/*" %>
+<p>Introduction</p>
+  <%= f.text_area :Introduction %><br>
+  
+  <%= f.submit "Update User " %>
 <% end %>
-
-<%= link_to "Show", book_path(@book.id) %>
