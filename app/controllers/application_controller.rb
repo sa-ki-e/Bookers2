@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-
+  before_action :authenticate_user!, except: [:top, :about]
   #ストロングパラメータ同様、データの保存ができるよう
   before_action :configure_permitted_parameters, if: :devise_controller?
 
@@ -7,9 +7,9 @@ class ApplicationController < ActionController::Base
     user_path(current_user)
   end
 
-  #def after_sign_out_path_for(resource)
-    #about_path
-  #end
+  # def after_sign_out_path_for(resource)
+  #   about_path
+  # end
 
   protected
 
