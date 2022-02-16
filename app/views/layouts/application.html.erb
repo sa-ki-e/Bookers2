@@ -22,32 +22,40 @@
            <!--true→Users(users)・Books(books)・Logout(sign_out)-->
             <ul class="navbar-nav ml-auto">
             <% if user_signed_in? %>
-            <li class="nav-item">
-              <%= link_to "Home", user_path(current_user), class: "fas fa-home nav-ink text-light" %><!--Home(users/show)リンク-->
-            </li>
-            <li class="nav-item">
-              <%= link_to "User", users_path, class: "fas fa-users nav-link text-light" %><!--User(users)リンク-->
-            </li>
-            <li class="nav-item">
-              <%= link_to "Books", books_path, class: "fas fa-book-open nav-link text-light" %><!--Books(books)リンク-->
-            </li>
-            <li class="nav-item">
-              <%= link_to "Log out", destroy_user_session_path, class: "fas fa-sign-out-alt nav-link text-light", method: :delete %><!--Log out(リンク-->
-            </li>
+              <li class="nav-item">
+                <a class="fas fa-home nav-link text-light"></a><!--Homeのアイコン-->
+                <%= link_to "Home", user_path(current_user), class: "nav-link text-light" %><!--Home(users/show)リンク-->
+              </li>
+              <li class="nav-item">
+                <a class="fas fa-users nav-link text-light"></a><!--Usersのアイコン-->
+                <%= link_to "User", users_path, class: "nav-link text-light" %><!--User(users)リンク-->
+              </li>
+              <li class="nav-item">
+                <a class="fas fa-book-open nav-link text-light"></a><!--Booksのアイコン-->
+                <%= link_to "Books", books_path, class: "nav-link text-light" %><!--Books(books)リンク-->
+              </li>
+              <li class="nav-item">
+                <a class="fas fa-sign-out-alt nav-link text-light"></a><!--Log outのアイコン-->
+                <%= link_to "Log out", destroy_user_session_path, class: "nav-link text-light", method: :delete %><!--Log out(リンク-->
+              </li>
+  
             <% else %>
-          <!--false→About(home/about)・Sign up(users/sign_up)・Login(users/sign_in) -->
-            <li class="nav-item">
-              <%= link_to "Home", root_path, class: "fas fa-home nav-link text-light" %><!--Home(top)リンク-->
-            </li>
-            <li class="nav-item">
-              <%= link_to "About", about_path, class: "fas fa-link nav-link text-light" %>
-            </li>
-            <li class="nav-item">
-              <%= link_to "Sign up", new_user_registration_path, class: "fas fa-user-plus nav-link text-light" %>
-            </li>
-            <li class="nav-item">
-              <%= link_to "Log in", new_user_session_path, class: "fas fa-sign-in-alt nav-link text-light" %>
-            </li>
+              <li class="nav-item">
+                <a class="fas fa-home nav-link text-light"></a><!--Homeのアイコン-->
+                <%= link_to "Home", root_path, class: "nav-link text-light" %><!--Home(users/show)リンク-->
+              </li>
+              <li class="nav-item">
+                <a class="fas fa-link nav-link text-light"></a>
+                <%= link_to "About", about_path, class: "nav-link text-light" %>
+              </li>
+              <li class="nav-item">
+                <a class="fas fa-user-plus nav-link text-light"></a>
+                <%= link_to "Sign up", new_user_registration_path, class: "nav-link text-light" %>
+              </li>
+              <li class="nav-item">
+                <a class="fas fa-sign-in-alt nav-link text-light"></a>
+                <%= link_to "Log in", new_user_session_path, class: "nav-link text-light" %>
+              </li>
             </ul>
           </div>
         </div>
@@ -66,3 +74,4 @@
     </footer>
   </body>
 </html>
+
