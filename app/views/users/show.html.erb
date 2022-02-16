@@ -1,3 +1,4 @@
+<!--ここからuser show-->
 <h2>User info</h2>
 <% if @user.image.attached? %>
       <%= image_tag @user.image, size: "200×200" %>
@@ -18,4 +19,7 @@
   </tr>
 </tbody></table>
 <%= link_to "EDITボタン", edit_user_path(@user.id) %></a>
+<!--↑他の人が編集できないようにする-->
 </div>
+
+<%= render "books/new", book: @book %>

@@ -1,7 +1,13 @@
+<!--UserShow-->
+<%= render "users/show", user: @user %>
+<!--NewBook-->
+<%= render "books/new", book: @newbook %>
+
+
+<div>
 <h1>Books</h1><!--Userの画像、Title、Opinion-->
 <% @users.each do |user| %>
 <div>
-  <!--image-->
     <% if user.image.attached? %>
       <%= image_tag user.image, size: "200×200" %>
     <% else %>
