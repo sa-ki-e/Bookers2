@@ -17,7 +17,7 @@ class BooksController < ApplicationController
     @books = Book.all
     @users = User.all
     @newbook = Book.new
-    #@user = current_user.id
+    @user = current_user
   end
 
   def show

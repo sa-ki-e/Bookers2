@@ -6,16 +6,15 @@
 
 <div>
 <h1>Books</h1><!--Userの画像、Title、Opinion-->
-<% @users.each do |user| %>
+
+
+<% @books.each do |book| %>
 <div>
-    <% if user.image.attached? %>
-      <%= image_tag user.image, size: "200×200" %>
+ <% if book.user.image.attached? %>
+      <%= image_tag book.user.image, size: "200×200" %>
     <% else %>
       <% image_tag "no_image.jpg", size: "200×200" %>
     <% end %>
-<% end %>
-
-<% @books.each do |book| %>
   <p>Title</p>
     <%= link_to book.title, book_path(book.id) %>
   <p>Opinion</p>
