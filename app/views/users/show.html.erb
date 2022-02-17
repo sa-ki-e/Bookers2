@@ -1,24 +1,30 @@
 <!--ここからuser show-->
+<div class="col-md-3">
 <h2>User info</h2>
 <% if @user.image.attached? %>
-      <%= image_tag @user.image, size: "200×200" %>
+      <%= image_tag user.image, size: "200×200" %>
     <% else %>
       <%= image_tag "no_image.jpg", size: "200×200" %>
     <% end %>
 
 <table class="table">
-  <tbody><tr></tr>
-  <tr>
-    
-	  <th>name</th>
-	  <th><%= @user.name %></th>
-  </tr>
-  <tr>
-	  <th>introduction</th>
-	  <th><%= @user.introduction %></th>
-  </tr>
-</tbody></table>
-<%= link_to "EDITボタン", edit_user_path(@user.id) %></a>
+  <tbody>
+    <tr>
+    </tr>
+    <tr>
+      <th>name</th>
+      <th><%= @user.name %></th>
+    </tr>
+    <tr>
+      <th>introduction</th>
+      <th><%= @user.introduction %></th>
+    </tr>
+  </tbody>
+</table>
+
+<%= link_to edit_user_path(@user.id) do %>
+  <i class="btn btn-outline-secondary btn-block fas fa-user-cog edit_user_id"></i>
+<% end %>
 <!--↑他の人が編集できないようにする-->
 </div>
 
