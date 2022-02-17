@@ -1,7 +1,7 @@
 <!--UserShow-->
 <%= render "users/show", user: @user %>
 <!--NewBook-->
-<%= render "books/new", book: @newbook %>
+<%= render "books/new", book: @book %>
 
 
 <div class="col-md-8 offset-md-1">
@@ -19,7 +19,7 @@
     <% @books.each do |book| %>
     <tr>
       <td>
-        <% if book.user.profile_image.attached? %>
+       <% if book.user.profile_image.attached? %>
           <%= image_tag book.user.profile_image, size: "200×200" %>
         <% else %>
           <% image_tag "no_image.jpg", size: "200×200" %>
