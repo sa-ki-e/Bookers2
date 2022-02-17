@@ -3,8 +3,8 @@
 <!--ここからuser show-->
 <div class="col-md-3">
   <h2>User info</h2>
-  <% if user.image.attached? %>
-        <%= image_tag user.image, size: "200×200" %>
+  <% if user.profile_image.attached? %>
+        <%= image_tag user.profile_image, size: "200×200" %>
       <% else %>
         <%= image_tag "no_image.jpg", size: "200×200" %>
       <% end %>
