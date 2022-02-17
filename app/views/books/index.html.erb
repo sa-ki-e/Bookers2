@@ -20,9 +20,9 @@
     <tr>
       <td>
        <% if book.user.profile_image.attached? %>
-          <%= image_tag book.user.profile_image, size: "200×200" %>
+          <%= image_tag book.user.profile_image, size: "20×20" %>
         <% else %>
-          <% image_tag "no_image.jpg", size: "200×200" %>
+          <%= image_tag 'no_image', size: "80x80" %>
         <% end %>
       </td>
       <td>

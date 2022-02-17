@@ -35,6 +35,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.1]
       #追加：名前を保存するカラム
       t.string :name, unique: true
       t.text :introduction
+      t.string :profile_image
 
       t.timestamps null: false
     end

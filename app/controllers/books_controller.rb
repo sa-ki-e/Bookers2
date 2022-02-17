@@ -30,6 +30,9 @@ class BooksController < ApplicationController
     @user = @book.user  #User.find(params[:id])
     @newbook = Book.new
   end
+  
+  # @user = User.find(params[:id]) #book Showでは@user = @book.user
+   # @book = Book.find(params[:id]) #book Showでは@book = Book.find(params[:id])
 
   def edit
     @book = Book.find(params[:id])
