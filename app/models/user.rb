@@ -7,12 +7,20 @@ class User < ApplicationRecord
   has_one_attached :profile_image
   has_many :books, dependent: :destroy
 
+  validates :name, uniqueness: true, presence: true,
+            length: { minimum: 2, maximum: 20 }
+
+
+  validates :introduction, length: { maximum: 50 }
+  
+  #presence: true
+
   #def get_image#indexの中のget_imageの呼び出しってだけ
   # unless image.attached?#保存されているか？
   #     file_path = Rails.root.join('app/assets/images/no_image.jpg')#file_pathは今定義した。Rails.rootはこのディレクトリのこと joinは参加させる
   #     image.attach(io: File.open(file_path), filename: 'default-image.jpg', content_type: 'image/jpeg')#imageに保存
   #   end
     #profile_image.variant(resize_to_limit: [100, 100]).processed
-  
-  
+
+
 end

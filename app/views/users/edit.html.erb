@@ -1,16 +1,30 @@
-<h1>User info</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
 
+      <h2>User info</h2>
+      <% if @user.errors.any? %>
+        <%= @user.errors.count %>error prohibited this obj from being saved:
+        <ul>
+        <% @user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      <% end %>
+      <%= form_with model:@user, local:true do |f| %>
+      <p>Name</p>
+        <%= f.text_field :name %>
+      <p>Image</p>
+        <%= f.file_field :profile_imag, accept: "image/*" %>
+      <p>Introduction</p>
+        <%= f.text_area :introduction %><br>
 
-<!--イメージと自己紹介を追加、下はサンプル-->
-<%= form_with model:@user, local:true do |f| %>
-<p>Name</p>
-  <%= f.text_field :name %>
-<p>Image</p>
-  <%= f.file_field :profile_imag, accept: "image/*" %>
-<p>Introduction</p>
-  <%= f.text_area :Introduction %><br>
-  
-  <%= f.submit "Update User " %><br>
-<% end %>
+      <div class="form-group">
+        <input type="submit" name="commit" value="Update User" class="btn btn-secondary" data-disable-with="Update User">
+      </div>
+      <% end %>
 
+    </div>
+  </div>
+</div>
 
