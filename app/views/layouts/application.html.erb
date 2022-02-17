@@ -38,7 +38,7 @@
                 <a class="fas fa-sign-out-alt nav-link text-light"></a><!--Log outのアイコン-->
                 <%= link_to "Log out", destroy_user_session_path, class: "nav-link text-light", method: :delete %><!--Log out(リンク-->
               </li>
-  
+
             <% else %>
               <li class="nav-item">
                 <a class="fas fa-home nav-link text-light"></a><!--Homeのアイコン-->
@@ -62,18 +62,22 @@
     <% end %>
       </nav>
     </header>
-    
+
+    <% if flash[:notice] %>
+    <p id="notice"><%= flash[:notice] %></p>
+    <% end %>
+
     <main>
       <div class="container px-5 px-sm-0">
-        
+
         <div class="row">
-          
+
     <%= yield %>
-    
+
         </div>
       </div>
     </main>
-    
+
     <footer>
       <div class="container mt-5">
         <div class="row">
