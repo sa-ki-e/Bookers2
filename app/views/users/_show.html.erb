@@ -1,28 +1,29 @@
 <!--render "users/show", user: @●●● -->
 <!--部分テンプレート先に書く↑-->
 <!--ここからuser show-->
-<div class="col-md-3">
-  <h2>User info</h2>
-  
-      <%= image_tag user.get_profile_image(100,100) %>
-  
-  <table class="table">
-    <tbody>
-      <tr>
-      </tr>
-      <tr>
-        <th>name</th>
-        <th><%= user.name %></th>
-      </tr>
-      <tr>
-        <th>introduction</th>
-        <th><%= user.introduction %></th>
-      </tr>
-    </tbody>
-  </table>
-  
-  <%= link_to edit_user_path(user.id) do %>
-    <i class="btn btn-outline-secondary btn-block fas fa-user-cog edit_user_id"></i>
-  <% end %>
+<div class="container"> <!--px-0 px-md-5??-->
+  <div class="row">
+
+    <div class="col-md-3">
+      <h2>User info</h2>
+        <%= image_tag user.get_profile_image(100,100) %>
+        <table class="table">
+          <tbody>
+            <tr>
+            </tr>
+            <tr>
+              <th>name</th>
+              <th><%= user.name %></th>
+            </tr>
+            <tr>
+              <th>introduction</th>
+              <th><%= user.introduction %></th>
+            </tr>
+          </tbody>
+        </table>
+      
+        <%= link_to edit_user_path(user.id) do %>
+          <i class="btn btn-outline-secondary btn-block fas fa-user-cog edit_user_id"></i>
+        <% end %>
 <!--↑他の人が編集できないようにする-->
 
