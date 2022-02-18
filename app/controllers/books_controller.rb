@@ -22,6 +22,7 @@ class BooksController < ApplicationController
     @books = Book.all
     @book = Book.new
     @user = current_user
+    #@users = @books.user#
    #@users = User.all
   end
 
@@ -30,7 +31,7 @@ class BooksController < ApplicationController
     @user = @book.user  #User.find(params[:id])
     @newbook = Book.new
   end
-  
+
   # @user = User.find(params[:id]) #book Showでは@user = @book.user
    # @book = Book.find(params[:id]) #book Showでは@book = Book.find(params[:id])
 

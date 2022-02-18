@@ -1,12 +1,12 @@
 <!--UserShow-->
-<%= render "users/show", user: @user %>
+<%= render "users/user_info", user: @user %>
 
 <!--New-->
 <%= render "new", book: @newbook %>
 
 <div class="col-md-8 offset-md-1">
   <h2>Book detail</h2>
-  
+
 	<table class="table">
 		<tbody>
 		  <tr>
@@ -34,5 +34,5 @@
     </tbody>
   </table>
 </div>
-  
+
   <!--ログイン中のuserであればここにeditとdestroyのリンクを表示-->
