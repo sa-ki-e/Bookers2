@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   def show
-    @user = User.find(params[:id]) #book Showでは@user = @book.user
-    @books = @user.books #book Showでは@book = Book.find(params[:id])
+    @user = User.find(params[:id]) 
+    @books = @user.books 
     @newbook = Book.new
   end
 
