@@ -23,38 +23,55 @@
             <ul class="navbar-nav ml-auto">
             <% if user_signed_in? %>
               <li class="nav-item">
-                <a class="fas fa-home nav-link text-light"></a><!--Homeのアイコン-->
-                <%= link_to "Home", user_path(current_user), class: "nav-link text-light" %><!--Home(users/show)リンク-->
+                <%= link_to user_path(current_user), class: "nav-link text-light" do %>
+                  <i class="fas fa-home"></i>
+                   Home
+                <% end %>
               </li>
               <li class="nav-item">
-                <a class="fas fa-users nav-link text-light"></a><!--Usersのアイコン-->
-                <%= link_to "Users", users_path, class: "nav-link text-light" %><!--User(users)リンク-->
-              </li>
+                <%= link_to users_path, class: "nav-link text-light" do %>
+                <i class="fas fa-users"></i>
+                 Users
+                 <% end %>
+                 </li>
               <li class="nav-item">
-                <a class="fas fa-book-open nav-link text-light"></a><!--Booksのアイコン-->
-                <%= link_to "Books", books_path, class: "nav-link text-light" %><!--Books(books)リンク-->
-              </li>
+                <%= link_to books_path, class: "nav-link text-light" do %><!--Books(books)リンク-->
+                <i class="fas fa-book-open"></i>
+                 Books
+                 <% end %>
+                 </li>
               <li class="nav-item">
-                <a class="fas fa-sign-out-alt nav-link text-light"></a><!--Log outのアイコン-->
-                <%= link_to "Log out", destroy_user_session_path, class: "nav-link text-light", method: :delete %><!--Log out(リンク-->
+                <%= link_to destroy_user_session_path, class: "nav-link text-light", method: :delete do %><!--Log out(リンク-->
+                <i class="fas fa-sign-out-alt"></i><!--Log outのアイコン-->
+                 Log out
+                <% end %>
               </li>
 
             <% else %>
               <li class="nav-item">
-                <a class="fas fa-home nav-link text-light"></a><!--Homeのアイコン-->
-                <%= link_to "Home", root_path, class: "nav-link text-light" %><!--Home(users/show)リンク-->
+                <!--a class="fas fa-home nav-link text-light"></a><!--Homeのアイコン-->
+                <%= link_to root_path, class: "nav-link text-light" do %>
+                <i class="fas fa-home"></i><!--Home(users/show)リンク-->
+                 Home
+                 <% end %>
               </li>
               <li class="nav-item">
-                <a class="fas fa-link nav-link text-light"></a>
-                <%= link_to "About", about_path, class: "nav-link text-light" %>
+                <%= link_to about_path, class: "nav-link text-light" do %>
+                <i class="fas fa-link"></i>
+                 About
+                 <% end %>
               </li>
               <li class="nav-item">
-                <a class="fas fa-user-plus nav-link text-light"></a>
-                <%= link_to "Sign up", new_user_registration_path, class: "nav-link text-light" %>
+                <%= link_to new_user_registration_path, class: "nav-link text-light" do %>
+                <i class="fas fa-user-plus"></i>
+                 Sign up
+                <% end %>
               </li>
               <li class="nav-item">
-                <a class="fas fa-sign-in-alt nav-link text-light"></a>
-                <%= link_to "Log in", new_user_session_path, class: "nav-link text-light" %>
+                <%= link_to new_user_session_path, class: "nav-link text-light" do %>
+                <i class="fas fa-sign-in-alt"></i>
+                 Log in
+                <% end %>
               </li>
             </ul>
           </div>
@@ -66,7 +83,7 @@
     <% if flash[:notice] %>
     <p id="notice"><%= flash[:notice] %></p>
     <% end %>
-    
+
 
     <main>
       <div class="container px-5 px-sm-0">

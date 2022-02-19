@@ -23,6 +23,7 @@
           <%= @book.body %>
          </td>
         <td>
+          <%# if user_signed_in? && @book.user_id == current_user.id ???%>
         <% if @book.user == current_user %>
           <%= link_to "Edit", edit_book_path(@book.id) %>
         </td>
